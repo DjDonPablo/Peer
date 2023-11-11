@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Input from '@mui/joy/Input';
 import { useRouter } from "next/router";
+import { Autocomplete } from "@mui/joy";
 
 function AppBar() {
   const router = useRouter()
@@ -13,7 +14,7 @@ function AppBar() {
         </li>
         <li className="sub-list-element-header">
           <ul className="sub-list-header">
-            <li className="sub-list-header-li"><a className="menu__link" href="#">Subject</a></li>
+            <li className="sub-list-header-li"><a className="menu__link" href="#">Subjects</a></li>
             <li className="sub-list-header-li"><a className="menu__link" href="#">Community</a></li>
             <li className="sub-list-header-li"><a className="menu__link" href="#">About</a></li>
           </ul>
@@ -27,10 +28,11 @@ function AppBar() {
 }
 
 function Container() {
+  const router = useRouter()
   return (
     <div className="container-div">
       <h1 className="title">What do you want to learn today ?</h1>
-      <Input size="lg" placeholder="Search for a subject" variant="soft" color="neutral" className="input" />
+      <Autocomplete onChange={(e, v) => router.push("/subject/" + v)} size="lg" placeholder="Search for a subject" variant="soft" color="neutral" className="input" freeSolo={true} options={["Technology", "Science", "Health & Fitness", "Arts & Entertainment", "Gaming", "Books & Literature", "Travel", "Politics & Current Events", "Relationships & Advice", "Cooking & Food", "Sports", "Fashion", "DIY & Crafts", "Parenting", "Pets", "Cars & Vehicles", "Photography", "Career & Education", "Personal Finance", "Meditation & Mindfulness"]} />
     </div>
   )
 }

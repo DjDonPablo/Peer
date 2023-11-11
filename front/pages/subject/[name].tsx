@@ -2,7 +2,7 @@ import Button from "@mui/joy/Button"
 import { useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import { ButtonGroup, Card, Input } from "@mui/joy";
+import { Accordion, AccordionDetails, AccordionGroup, AccordionSummary, ButtonGroup, Card, Input } from "@mui/joy";
 import Table from '@mui/joy/Table';
 
 function AppBar() {
@@ -25,6 +25,30 @@ function AppBar() {
       </ul>
     </div>
   )
+}
+
+function AccordionBasic() {
+  return (
+    <AccordionGroup >
+      <Accordion>
+        <AccordionSummary className="form-question">How can I do that ?</AccordionSummary>
+        <AccordionDetails>
+          <div className="accordion-details">
+            <h5 className="details-date">11/11/2023</h5>
+            <h4 className="details-title">Description: </h4>
+            <p className="details-forum">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+              tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+            <h4 className="details-title">Created by: </h4>
+            <p className="details-forum">
+              DjDonpablo
+            </p>
+          </div>
+        </AccordionDetails>
+      </Accordion>
+    </AccordionGroup>
+  );
 }
 
 function BasicTable() {
@@ -86,30 +110,40 @@ function Personal() {
   return (
     <div className="container-personal-quests">
       <BasicTable/>
-      <Card className="card-style">
-        <p>Your quests data</p>
-        <div>
-          <div className="center-sphere center-sphere-personal">
-            <div role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100" style={{ '--value': 65, '--fg-color': '#666', 'fontFamily': 'font-family: var(--joy-fontFamily-body, "Inter", var(--joy-fontFamily-fallback, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"))'}}></div>
+      <div className="test">
+        <Card className="card-style-2">
+          <h3 className="level-perso">Level 7</h3>
+          <h5 className="level-role-perso">New runner</h5>
+          <div className="progress">
+            <div className="progress-value"></div>
           </div>
-          <div className="center-text-personal">
-            <div className="above-line">Easy</div>
-            <div className="line green-background" style={{ width: '50%' }}></div>
-            <div className="above-line">Medium</div>
-            <div className="line orange-background" style={{ width: '80%' }}></div>
-            <div className="above-line">Hard</div>
-            <div className="line red-background" style={{ width: '25%' }}></div>
+        </Card>
+        <Card className="card-style">
+          <p>Your quests data</p>
+          <div>
+            <div className="center-sphere center-sphere-personal">
+              <div role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100" style={{ '--value': 65, '--fg-color': '#666', 'fontFamily': 'font-family: var(--joy-fontFamily-body, "Inter", var(--joy-fontFamily-fallback, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"))'}}></div>
+            </div>
+            <div className="center-text-personal">
+              <div className="above-line">Easy</div>
+              <div className="line green-background" style={{ width: '50%' }}></div>
+              <div className="above-line">Medium</div>
+              <div className="line orange-background" style={{ width: '80%' }}></div>
+              <div className="above-line">Hard</div>
+              <div className="line red-background" style={{ width: '25%' }}></div>
+            </div>
           </div>
-        </div>
-      </Card>
+        </Card>
+      </div>
     </div>
   )
 }
 
 function Forum() {
   return (
-    <div >
-      Forum
+    <div>
+      <Input size="md" placeholder="Search for a question" variant="soft" color="neutral" className="input-form"/>
+      <AccordionBasic/>
     </div>
   )
 }
@@ -135,7 +169,10 @@ function Search({subject} : SearchProps) {
 
   return (
     <>
-      <h1 className="subject">{subject.charAt(0).toUpperCase() + subject.slice(1)}</h1>  
+      <div className="header-subject">
+        <Image alt="icon subject" src="/sports.png" width={50} height={50} className="image-subject"/>
+        <h1 className="subject">{subject.charAt(0).toUpperCase() + subject.slice(1)}</h1>  
+      </div>
       <div className="button-group-div">
         <ButtonGroup
           orientation="horizontal"

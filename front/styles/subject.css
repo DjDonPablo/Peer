@@ -81,9 +81,9 @@ body {
 .subject {
     font-family: var(--joy-fontFamily-body, "Inter", var(--joy-fontFamily-fallback, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"));
     font-size: 40px;
-    margin-top: 20px;
-    margin-bottom: 10px;
-    margin-left: 80px;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 20px;
     font-weight: 700;
 }
 
@@ -122,13 +122,32 @@ body {
 }
 
 .card-style {
-    margin-left: 20px;
-    margin-top: auto;
-    margin-bottom: auto;
-    width: 18%;
-    height: 1%;
+    margin-left: 40px;
+    width: 80%;
+    height: 60%;
     padding-top: 0;
-    display: inline-block;
+}
+
+.card-style-2 {
+    margin-left: 40px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    width: 80%;
+    height: 70%;
+    padding-top: 0;
+    gap: 0;
+}
+
+.level-perso {
+    margin-top: 10px;
+    margin-bottom: 0;
+    font-family: var(--joy-fontFamily-body, "Inter", var(--joy-fontFamily-fallback, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"));
+}
+
+.level-role-perso {
+    margin: 0;
+    font-family: var(--joy-fontFamily-body, "Inter", var(--joy-fontFamily-fallback, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"));
+    font-weight: 400;
 }
 
 .container-personal-quests {
@@ -147,4 +166,77 @@ body {
   transform: translateY(-50%); /* Centre le bloc de texte par rapport à son propre axe Y */
   padding-bottom: 10px;
   margin-top: 30px;
+}
+
+.header-subject {
+    display: flex;
+    margin-top: 20px;
+}
+
+.image-subject {
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 80px;
+}
+
+.test {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+}
+
+.progress {
+  background: #000;
+  margin-top: 10px;
+  justify-content: flex-start;
+  border-radius: 100px;
+  align-items: center;
+  position: relative;
+  padding: 0 3px;
+  display: flex;
+  height: 14px;
+  width: 95%;
+}
+
+.progress-value {
+  box-shadow: 0 10px 40px -10px #00ff00;
+  border-radius: 100px;
+  background: #00ff00;
+  height: 8px;
+  width: 66%;
+}
+
+.input-form {
+    width: 40%;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+}
+
+.accordion-details {
+    border-radius: 20px;
+    background-color: #F0F4F8;
+}
+
+.details-forum {
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: 0;
+}
+
+.details-title {
+    margin-top: 10px;
+    margin-bottom: 0;
+    margin-left: 15px;
+}
+
+.details-date {
+    margin-bottom: 5px;
+    margin-top: 10px;
+    margin-left: 93%;
+}
+
+.form-question {
+    font-size: larger;
 }

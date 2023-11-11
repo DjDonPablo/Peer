@@ -2,7 +2,10 @@ body {
     background-color: #DDD;
 }
 
-.logo-header {}
+.logo-header {
+    margin-top: 10px;
+    margin-left: 10px;
+}
 
 .header {
     position: sticky;
@@ -28,6 +31,7 @@ body {
 }
 
 .sub-list-header {
+    font-family: 'Roboto', sans-serif;
     list-style: none;
     margin: 0;
     padding: 0;

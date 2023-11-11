@@ -9,7 +9,7 @@ function AppBar() {
         </li>
         <li className="sub-list-element-header">
           <ul className="sub-list-header">
-            <li><a href="">Sujet</a></li>
+            <li><a href="">Subject</a></li>
             <li><a href="">Communauté</a></li>
             <li><a href="">A propos</a></li>
           </ul>
@@ -24,8 +24,6 @@ function AppBar() {
 
 export default function Home() {
   return (
-    <>
-      <AppBar />
-    </>
+    <AppBar />
   );
 }

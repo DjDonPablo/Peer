@@ -1,0 +1,44 @@
+body {
+    background-color: #DDD;
+}
+
+.logo-header {}
+
+.header {
+    position: sticky;
+    background-color: #CCC;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.list-header {
+    list-style: none;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+    align-content: center;
+}
+
+.sub-list-element-header {
+    justify-content: center;
+    align-items: center;
+    display: flex !important;
+}
+
+.sub-list-header {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+ul.list-header li {
+    display: inline-block;
+}
+
+ul.sub-list-header li {
+    display: inline-block;
+    padding-left: 10px;
+    padding-right: 10px;
+}

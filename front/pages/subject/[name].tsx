@@ -2,7 +2,7 @@ import Button from "@mui/joy/Button"
 import { useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import { Accordion, AccordionDetails, AccordionGroup, AccordionSummary, ButtonGroup, Card, Input } from "@mui/joy";
+import { Accordion, AccordionDetails, AccordionGroup, AccordionSummary, Avatar, ButtonGroup, Card, IconButton, Input } from "@mui/joy";
 import Table from '@mui/joy/Table';
 
 function AppBar() {
@@ -27,7 +27,23 @@ function AppBar() {
   )
 }
 
+function AccountBadge() {
+  return (
+    <div className="quoi">
+      <div className="coubeh">
+        <Avatar size="sm" className="avatar">
+          CC
+        </Avatar>
+        <h5 className="name">DjDonPablo</h5>
+        <h4 className="name name-color">Lvl.14</h4>
+      </div>
+    </div>
+  )
+}
+
 function AccordionBasic() {
+  const [count, setCount] = useState<number>(6)
+
   return (
     <AccordionGroup >
       <Accordion>
@@ -40,10 +56,34 @@ function AccordionBasic() {
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
               tempor incididunt ut labore et dolore magna aliqua.
             </p>
-            <h4 className="details-title">Created by: </h4>
-            <p className="details-forum">
-              DjDonpablo
-            </p>
+            <div className="created-by">
+              <h4 className="details-created-by">By </h4>
+              <AccountBadge/>
+            </div>
+            <div className="response">
+              <div className="buttons-votes" >
+                <ButtonGroup
+                  orientation="vertical"
+                  variant="soft"
+                >
+                  <Button startDecorator={<Image alt="up-vote" src="/up.png" width={20} height={20} className="img-vote"/>} color="success" onClick={() => setCount(count + 1)}/>
+                  <Button disabled={true} className="vote-count">
+                    {count}
+                  </Button>
+                  <Button startDecorator={<Image alt="up-vote" src="/down.png" width={20} height={20} className="img-vote"/>} color="danger" onClick={() => setCount(count - 1)}/>
+                </ButtonGroup>
+              </div>
+              <div>
+                <div className="created-by">
+                  <h4 className="details-created-by">By </h4>
+                  <AccountBadge/>
+                </div>
+                <p className="details-forum">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                  tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+              </div>
+            </div>
           </div>
         </AccordionDetails>
       </Accordion>

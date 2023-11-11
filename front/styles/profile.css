@@ -69,6 +69,7 @@ div[role="progressbar"]::before {
   right: 0; /* Place le texte au centre horizontalement */
   transform: translateX(100%);
   color: #333; /* Couleur du texte */
+  font-family: var(--joy-fontFamily-body, "Inter", var(--joy-fontFamily-fallback, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"));
   font-size: 12px;
   }
 

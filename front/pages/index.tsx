@@ -40,6 +40,7 @@ export default function Home() {
     <div>
       <AppBar />
       <div className="app-bar-divider"/>
+      <Image alt="background" src="/background.png" width={1600} height={690} className="background"/>
       <Container />
     </div>
   );

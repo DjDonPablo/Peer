@@ -87,11 +87,12 @@ function Personal() {
     <div className="container-personal-quests">
       <BasicTable/>
       <Card className="card-style">
+        <p>Your quests data</p>
         <div>
-          <div className="center-sphere">
-            <div role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100" style={{ '--value': 65, '--fg-color': '#EF103D' }}></div>
+          <div className="center-sphere center-sphere-personal">
+            <div role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100" style={{ '--value': 65, '--fg-color': '#666', 'fontFamily': 'font-family: var(--joy-fontFamily-body, "Inter", var(--joy-fontFamily-fallback, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"))'}}></div>
           </div>
-          <div className="center-text">
+          <div className="center-text-personal">
             <div className="above-line">Easy</div>
             <div className="line green-background" style={{ width: '50%' }}></div>
             <div className="above-line">Medium</div>

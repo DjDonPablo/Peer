@@ -62,7 +62,14 @@ ul.list-header li {
 }
 
 .container-div {
-    margin-top: 100px;
+    background-color: rgba(255, 255, 255, 0.9);
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 20px;
+    width: 60%;
+    margin-top: 200px;
+    padding-bottom: 40px;
+    padding-top: 1px;
     text-align: center;
 }
 
@@ -108,4 +115,9 @@ a {
 
 .sub-list-header-v2 {
     margin-left: 10px;
+}
+
+.background {
+    position: fixed;
+    z-index: -10;
 }

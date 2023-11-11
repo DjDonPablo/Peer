@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 
-const YourComponent: React.FC = () => {
+export default function Profile() {
   useEffect(() => {
     const squares = document.querySelector('.squares');
     if (squares) {
@@ -74,5 +74,3 @@ const YourComponent: React.FC = () => {
     </>
   );
 }
-
-export default YourComponent;

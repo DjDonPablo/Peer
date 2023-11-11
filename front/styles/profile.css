@@ -1,0 +1,181 @@
+@keyframes growProgressBar {
+    0%, 33% { --pgPercentage: 0; }
+    100% { --pgPercentage: var(--value); }
+}
+
+@property --pgPercentage {
+  syntax: '<number>';
+  inherits: false;
+  initial-value: 0;
+}
+
+div[role="progressbar"] {
+  --size: 6rem;
+  --fg: var(--fg-color, #369);
+  --bg: rgb(212, 212, 212);
+  --pgPercentage: var(--value);
+  animation: growProgressBar 3s 1 forwards;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: 
+    radial-gradient(closest-side, white 90%, transparent 0 99.9%, white 0),
+    conic-gradient(var(--fg) calc(var(--pgPercentage) * 1%), var(--bg) 0)
+    ;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: calc(var(--size) / 5);
+  color: black;
+}
+
+div[role="progressbar"]::before {
+  counter-reset: percentage var(--value);
+  content: counter(percentage) '%';
+}
+
+.progress-container {
+  display: flex;
+  justify-content: space-between; /* Ajustez selon vos besoins */
+  gap: 30px;
+  /* Ajoutez d'autres styles selon vos besoins */
+}
+
+.progress-item {
+  border: 2px solid #ccc; /* Couleur et largeur de la bordure du rectangle */
+  border-radius: 10px; /* Rayon de la bordure pour rendre les coins plus arrondis */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.square {
+  width: 330px; /* Ajustez la largeur du carré selon vos besoins */
+  height: 170px; /* Ajustez la hauteur du carré selon vos besoins */
+  background-color: #ffffff; /* Couleur de fond du carré */
+  border-radius: 10px;
+  align-items: center; /* Centre le contenu verticalement */
+  justify-content: center;
+  position: relative;
+}
+
+.center-sphere {
+  padding-left: 10px;
+  padding-top: 45px; /* Adjust the left padding to create space between the left edge and the sphere */
+}
+
+.above-line {
+  top: 20px; /* Ajustez la distance entre le texte et la ligne selon vos besoins */
+  right: 0; /* Place le texte au centre horizontalement */
+  transform: translateX(100%);
+  color: #333; /* Couleur du texte */
+  font-size: 12px;
+  }
+
+.line {
+  height: 5px; /* Ajustez la hauteur de la ligne selon vos besoins */
+  width: 130%; /* Ajustez la largeur de la ligne selon vos besoins */
+  border-radius: 10px;
+  margin-left: 120px;
+  margin-top: 5px;
+  margin-bottom: 20px; 
+  }
+
+.center-text {
+  position: absolute;
+  left: 25px; /* Alignez le bloc de texte à droite de l'élément parent */
+  top: 50%; /* Placez le bloc de texte au centre verticalement */
+  transform: translateY(-50%); /* Centre le bloc de texte par rapport à son propre axe Y */
+  margin-top: 15px;
+}
+
+.orange-background {
+      background-color: rgb(255,161,22);
+}
+  
+.red-background {
+    background-color: rgb(239 71 67);
+}
+  
+.green-background {
+    background-color: rgb(0 175 155);
+}
+
+.months { grid-area: months; }
+.days { grid-area: days; }
+.squares { grid-area: squares }
+
+.graph {
+  display: inline-grid;
+  grid-template-areas: "empty months"
+                        "days squares";
+  grid-template-columns: auto 1fr;
+  grid-gap: 5px;
+}
+
+.months {
+  display: grid;
+  grid-template-columns: calc(var(--week-width) * 4) /* Jan */
+                          calc(var(--week-width) * 4) /* Feb */
+                          calc(var(--week-width) * 4) /* Mar */
+                          calc(var(--week-width) * 5) /* Apr */
+                          calc(var(--week-width) * 4) /* May */
+                          calc(var(--week-width) * 4) /* Jun */
+                          calc(var(--week-width) * 5) /* Jul */
+                          calc(var(--week-width) * 4) /* Aug */
+                          calc(var(--week-width) * 4) /* Sep */
+                          calc(var(--week-width) * 5) /* Oct */
+                          calc(var(--week-width) * 4) /* Nov */
+                          calc(var(--week-width) * 5) /* Dec */;
+}
+
+.days,
+.squares {
+  display: grid;
+  grid-gap: var(--square-gap);
+  grid-template-rows: repeat(7, var(--square-size));
+}
+
+.squares {
+  grid-auto-flow: column;
+  grid-auto-columns: var(--square-size);
+}
+
+/* Other styling */
+
+.days li, .squares li, .months li {
+  list-style-type: none;
+}
+
+.graph {
+  padding: 20px;
+  margin: 20px;
+}
+
+.days li:nth-child(odd) {
+  visibility: hidden;
+}
+
+.squares li {
+  background-color: #ffffff;
+}
+
+.squares li[data-level="1"] {
+  background-color: #c6e48b;
+}
+
+.squares li[data-level="2"] {
+  background-color: #7bc96f;
+}
+
+.squares li[data-level="3"] {
+  background-color: #196127;
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+      --square-size: 15px;
+    --square-gap: 5px;
+    --week-width: calc(var(--square-size) + var(--square-gap));
+}

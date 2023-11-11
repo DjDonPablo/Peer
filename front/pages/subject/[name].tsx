@@ -1,6 +1,33 @@
-import AppBar from "../index"
 import Button from "@mui/joy/Button"
 import { Dispatch, SetStateAction, useState } from "react";
+import Image from "next/image";
+import { useRouter } from "next/router";
+
+function AppBar() {
+  const router = useRouter()
+
+  return (
+    <div className="header">
+      <ul className="list-header">
+        <li>
+          <Image className="logo-header" onClick={() => router.push("/")} src="/logo.png" alt="logo" width={46} height={46} />
+        </li>
+        <li className="sub-list-element-header">
+          <ul className="sub-list-header">
+            <li className="sub-list-header-li"><a className="menu__link" href="#">Subject</a></li>
+            <li className="divider-menu-items" />
+            <li className="sub-list-header-li"><a className="menu__link" href="#">Community</a></li>
+            <li className="divider-menu-items" />
+            <li className="sub-list-header-li"><a className="menu__link" href="#">About</a></li>
+          </ul>
+        </li>
+        <li>
+          <Image src="/user_icon.png" alt="user" width={28} height={28} />
+        </li>
+      </ul>
+    </div>
+  )
+}
 
 type MenuProps  = {
   selectedMenu: number;
@@ -84,12 +111,12 @@ function Search({subject} : SearchProps) {
 }
 
 export default function SearchPage() {
-  const subject = "Cuisine" // NEED TO BE GET FROM URL PARAMETERS
+  const router = useRouter()
 
   return (
-    <>
+    <div>
       <AppBar />
-      <Search subject={subject}/>
-    </>
+      <Search subject={(router.query.name) as string}/>
+    </div>
   );
 }

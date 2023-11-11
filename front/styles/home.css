@@ -2,9 +2,8 @@ body {
     background-color: #faf0e6;
 }
 
-.logo-header {
-    margin-top: 5px;
-    margin-bottom: 5px;
+.logo-header:hover {
+    cursor: pointer;
 }
 
 .header {

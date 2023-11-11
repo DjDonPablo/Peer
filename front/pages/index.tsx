@@ -1,12 +1,15 @@
 import Image from "next/image";
 import Input from '@mui/joy/Input';
+import { useRouter } from "next/router";
 
 function AppBar() {
+  const router = useRouter()
+
   return (
     <div className="header">
       <ul className="list-header">
         <li>
-          <Image src="/logo.png" alt="logo" width={46} height={46} />
+          <Image className="logo-header" onClick={() => router.push("/")} src="/logo.png" alt="logo" width={46} height={46} />
         </li>
         <li className="sub-list-element-header">
           <ul className="sub-list-header">
@@ -36,9 +39,9 @@ function Container() {
 
 export default function Home() {
   return (
-    <>
+    <div>
       <AppBar />
       <Container />
-    </>
+    </div>
   );
 }

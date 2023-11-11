@@ -1,0 +1,40 @@
+{
+    "quests": [
+        {
+            "exercise_name": "Dribbling Skills Challenge",
+            "status": "done",
+            "acceptance_rate": "41.87%",
+            "difficulty": "hard"
+        },
+        {
+            "exercise_name": "Three-Point Shooting Marathon",
+            "status": "new",
+            "acceptance_rate": "24.61%",
+            "difficulty": "hard"
+        },
+        {
+            "exercise_name": "Free Throw Mastery",
+            "status": "done",
+            "acceptance_rate": "56.23%",
+            "difficulty": "medium"
+        },
+        {
+            "exercise_name": "Defense Drill",
+            "status": "ongoing",
+            "acceptance_rate": "55.94%",
+            "difficulty": "medium"
+        },
+        {
+            "exercise_name": "Layup Precision Practice",
+            "status": "done",
+            "acceptance_rate": "73.11%",
+            "difficulty": "easy"
+        },
+        {
+            "exercise_name": "Shooting Form Refinement",
+            "status": "done",
+            "acceptance_rate": "81.45%",
+            "difficulty": "easy"
+        }
+    ]
+}

@@ -1,0 +1,49 @@
+{
+    "events": [
+        {
+            "event_name": "Amateur Tennis Tournament",
+            "description": "A friendly tennis tournament for enthusiasts of the sport. Come challenge other players and enjoy a sporty day!",
+            "date": "2023-11-18T09:00:00",
+            "location": "Kremlin Bicêtre Tennis Club",
+            "participants_registered": 8,
+            "max_participants": 12,
+            "author": "AceSmasher87"
+        },
+        {
+            "event_name": "Football KBClub Match",
+            "description": "A friendly club match for football enthusiasts. Enjoy a great game and cheer for your team!",
+            "date": "2023-11-20T15:00:00",
+            "location": "Kremlin Bicêtre Stadium",
+            "participants_registered": 20,
+            "max_participants": 20,
+            "author": "SoccerFanatic23"
+        },
+      {
+            "event_name": "Mountain Biking Excursion",
+            "description": "An MTB adventure on trails near Kremlin Bicêtre. Ideal for MTB enthusiasts seeking new experiences.",
+            "date": "2023-11-22T10:30:00",
+            "location": "Verrières-le-Buisson Forest",
+            "participants_registered": 0,
+            "max_participants": 2,
+            "author": "TrailBlazer99"
+        },
+        {
+            "event_name": "Open-Air Yoga Session",
+            "description": "Join us for a relaxing outdoor yoga session. A calming experience to recharge and practice yoga in a natural setting.",
+            "date": "2023-11-25T11:00:00",
+            "location": "Parc des Présidents, Kremlin Bicêtre",
+            "participants_registered": 3,
+            "max_participants": 12,
+            "author": "YogiZen22"
+        },
+        {
+            "event_name": "Urban Running Race",
+            "description": "A running event exploring the streets and parks of Kremlin Bicêtre. Ideal for urban runners seeking new routes.",
+            "date": "2023-11-28T08:00:00",
+            "location": "Downtown Kremlin Bicêtre",
+            "participants_registered": 1,
+            "max_participants": 3,
+            "author": "CityStrider"
+        }
+    ]
+}

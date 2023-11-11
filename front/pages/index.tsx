@@ -5,17 +5,19 @@ function AppBar() {
     <div className="header">
       <ul className="list-header">
         <li>
-          <Image className="logo-header" src="/logo.png" alt="logo" width={50} height={50} />
+          <Image src="/logo.png" alt="logo" width={46} height={46} />
         </li>
         <li className="sub-list-element-header">
           <ul className="sub-list-header">
-            <li><a href="">Subject</a></li>
-            <li><a href="">Communauté</a></li>
-            <li><a href="">A propos</a></li>
+            <li className="sub-list-header-li"><a className="menu__link" href="#">Subject</a></li>
+            <li className="divider-menu-items" />
+            <li className="sub-list-header-li"><a className="menu__link" href="#">Community</a></li>
+            <li className="divider-menu-items" />
+            <li className="sub-list-header-li"><a className="menu__link" href="#">About</a></li>
           </ul>
         </li>
         <li>
-          <p>caca</p>
+          <Image src="/user_icon.png" alt="user" width={28} height={28} />
         </li>
       </ul>
     </div>

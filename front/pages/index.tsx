@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Input from '@mui/joy/Input';
 
 function AppBar() {
   return (
@@ -24,8 +25,20 @@ function AppBar() {
   )
 }
 
+function Container() {
+  return (
+    <div className="container-div">
+      <h1 className="title">What do you want to learn today ?</h1>
+      <Input size="lg" placeholder="Search for a subject" variant="soft" color="neutral" className="input" />
+    </div>
+  )
+}
+
 export default function Home() {
   return (
-    <AppBar />
+    <>
+      <AppBar />
+      <Container />
+    </>
   );
 }

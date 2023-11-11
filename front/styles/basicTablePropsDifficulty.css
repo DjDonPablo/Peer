@@ -1,0 +1,25 @@
+.basicTablePropsDifficultyHard
+{
+    color : red;
+}
+
+.basicTablePropsDifficultyEasy
+{
+    color : green;
+}
+
+.basicTablePropsDifficultyMedium
+{
+    color : orange;
+}
+
+.basicTablePropsButtonOngoing
+{
+    width: 120px;
+}
+
+.basicTablePropsButtonNew
+{
+    width: 120px;
+    background-color: #00BB00;
+}

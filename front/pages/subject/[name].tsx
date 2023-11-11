@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import { Accordion, AccordionDetails, AccordionGroup, AccordionSummary, Avatar, ButtonGroup, Card, IconButton, Input } from "@mui/joy";
 import Table from '@mui/joy/Table';
+import json from '../../../input/quete_solo.json';
 
 function AppBar() {
   const router = useRouter()
@@ -91,55 +92,36 @@ function AccordionBasic() {
   );
 }
 
+type basicTableProps = {
+  exercise_name : string;
+  status : string;
+  acceptance_rate : string;
+  difficulty : string;
+}
+
+function TableRow(props : basicTableProps) {
+  return <tr>
+    <td>{props.exercise_name}</td>
+    <td>{props.acceptance_rate}</td>
+    <td className={props.difficulty == "hard" ? "basicTablePropsDifficultyHard" : props.difficulty == "medium" ? "basicTablePropsDifficultyMedium" : "basicTablePropsDifficultyEasy"}>{props.difficulty}</td>
+    <td><Button className={props.status == "new" ? "basicTablePropsButtonNew" : "basicTablePropsButtonOngoing"} disabled={props.status == "done"}>{props.status}</Button></td>
+  </tr>;
+}
+
 function BasicTable() {
   return (
     <div className="table-personal-quest"> 
       <Table aria-label="basic table">
         <thead>
           <tr>
-            <th style={{ width: '40%' }}>Dessert (100g serving)</th>
-            <th>Calories</th>
-            <th>Fat&nbsp;(g)</th>
-            <th>Carbs&nbsp;(g)</th>
-            <th>Protein&nbsp;(g)</th>
+            <th>Title</th>
+            <th>Acceptance</th>
+            <th>Difficulty</th>
+            <th>Actions</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Frozen yoghurt</td>
-            <td>159</td>
-            <td>6</td>
-            <td>24</td>
-            <td>4</td>
-          </tr>
-          <tr>
-            <td>Ice cream sandwich</td>
-            <td>237</td>
-            <td>9</td>
-            <td>37</td>
-            <td>4.3</td>
-          </tr>
-          <tr>
-            <td>Eclair</td>
-            <td>262</td>
-            <td>16</td>
-            <td>24</td>
-            <td>6</td>
-          </tr>
-          <tr>
-            <td>Cupcake</td>
-            <td>305</td>
-            <td>3.7</td>
-            <td>67</td>
-            <td>4.3</td>
-          </tr>
-          <tr>
-            <td>Gingerbread</td>
-            <td>356</td>
-            <td>16</td>
-            <td>49</td>
-            <td>3.9</td>
-          </tr>
+           { json.quests.map((e) => TableRow(e))}
         </tbody>
       </Table>
     </div>
@@ -221,7 +203,7 @@ function Search({subject} : SearchProps) {
         >
           <Button className={selectedMenu === 0 ? "selected-button-menu" : ""} onClick={() => setSelectedMenu(0)}>Personal Quests</Button>
           <Button className={selectedMenu === 1 ? "selected-button-menu" : ""} onClick={() => setSelectedMenu(1)}>Forum</Button>
-          <Button className={selectedMenu === 2 ? "selected-button-menu" : ""} onClick={() => setSelectedMenu(2)}>Community Quests</Button>
+          <Button style={{ width: '400px' }} className={selectedMenu === 2 ? "selected-button-menu" : ""} onClick={() => setSelectedMenu(2)}>Community Quests</Button>
         </ButtonGroup>
       </div>
       <div className="divider-subject-menu-div">

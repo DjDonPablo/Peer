@@ -1,0 +1,189 @@
+{
+    "questions": [
+      {
+        "question": "Exercises for leg strengthening in cycling?",
+        "topic": "cycling",
+        "specific_point": "leg strengthening",
+        "description": "What exercises help in strengthening legs for cycling?",
+        "author": "PedalPower77",
+        "date": "2023-11-05",
+        "user_level": 12,
+        "answers": [
+          {
+            "body": "Squats, lunges, and exercises with a stationary bike are excellent for leg strengthening.",
+            "author": "CycleStronger",
+            "date": "2023-11-06",
+            "user_level": 11
+          },
+          {
+            "body": "Additionally, hill climbs are a natural way to strengthen legs and improve endurance.",
+            "author": "HillClimber88",
+            "date": "2023-11-07",
+            "user_level": 10
+          }
+        ]
+      },
+      {
+        "question": "Pre-race nutrition for running?",
+        "topic": "running",
+        "specific_point": "pre-race nutrition",
+        "description": "What foods are ideal before a running race?",
+        "author": "RunFuel99",
+        "date": "2023-11-08",
+        "user_level": 9,
+        "answers": [
+          {
+            "body": "Simple carbohydrates like a banana or toast can provide the necessary energy before the race.",
+            "author": "RunEatsRepeat",
+            "date": "2023-11-09",
+            "user_level": 8
+          },
+          {
+            "body": "Additionally, a small amount of proteins can also be beneficial for sustained energy.",
+            "author": "MarathonPrep23",
+            "date": "2023-11-10",
+            "user_level": 10
+          }
+        ]
+      },
+      {
+        "question": "Post-workout stretching in weightlifting?",
+        "topic": "weightlifting",
+        "specific_point": "post-workout stretches",
+        "description": "What stretches are beneficial after a weightlifting session?",
+        "author": "FlexAndLift",
+        "date": "2023-11-10",
+        "user_level": 11,
+        "answers": [
+          {
+            "body": "Stretching major muscle groups improves recovery and prevents soreness.",
+            "author": "StretchMaster22",
+            "date": "2023-11-11",
+            "user_level": 9
+          },
+          {
+            "body": "Additionally, specific stretches for targeted muscle areas used during training are essential to prevent strain.",
+            "author": "GymStretchPro",
+            "date": "2023-11-12",
+            "user_level": 10
+          }
+        ]
+      },
+      {
+        "question": "Breathing during freestyle swimming?",
+        "topic": "swimming",
+        "specific_point": "freestyle swimming breathing",
+        "description": "What's the best breathing technique during freestyle swimming?",
+        "author": "SwimBreatheFlow",
+        "date": "2023-11-12",
+        "user_level": 13,
+        "answers": [
+          {
+            "body": "Breathing on the side at regular intervals helps maintain the rhythm and smoothness of the movement.",
+            "author": "AquaBreather",
+            "date": "2023-11-13",
+            "user_level": 12
+          },
+          {
+            "body": "Moreover, coordinating breathing with arm movements is essential for efficient swimming.",
+            "author": "SwimTechMaster",
+            "date": "2023-11-14",
+            "user_level": 14
+          }
+        ]
+      },
+      {
+        "question": "Best warm-ups for tennis?",
+        "topic": "tennis",
+        "specific_point": "warm-ups",
+        "description": "What are the most effective warm-ups before playing tennis?",
+        "author": "ServeAndSmash",
+        "date": "2023-11-15",
+        "user_level": 9,
+        "answers": [
+          {
+            "body": "Dynamic stretches and light racquet hits are perfect for preparing for the game.",
+            "author": "CourtWarmupPro",
+            "date": "2023-11-16",
+            "user_level": 8
+          },
+          {
+            "body": "Additionally, light sprints from one side of the court to the other can also be useful to get into condition.",
+            "author": "AceWarmer23",
+            "date": "2023-11-17",
+            "user_level": 11
+          }
+        ]
+      },
+      {
+        "question": "Balancing sprinting and endurance in running?",
+        "topic": "running",
+        "specific_point": "sprint and endurance balance",
+        "description": "How to find the balance between sprinting and endurance in running?",
+        "author": "FastAndSteadyRun",
+        "date": "2023-11-18",
+        "user_level": 13,
+        "answers": [
+          {
+            "body": "Alternating sprint sessions and long runs helps develop both types of performance.",
+            "author": "EnduranceRacerX",
+            "date": "2023-11-19",
+            "user_level": 12
+          },
+          {
+            "body": "Moreover, working on interval sessions develops both speed and endurance.",
+            "author": "SpeedEnduranceChamp",
+            "date": "2023-11-20",
+            "user_level": 9
+          }
+        ]
+      },
+      {
+        "question": "Managing fatigue in climbing?",
+        "topic": "climbing",
+        "specific_point": "fatigue management",
+        "description": "How to manage fatigue during climbing?",
+        "author": "ClimbSmart88",
+        "date": "2023-11-21",
+        "user_level": 10,
+        "answers": [
+          {
+            "body": "Taking regular breaks, staying hydrated, and managing effort are key to avoiding fatigue.",
+            "author": "PeakClimber99",
+            "date": "2023-11-22",
+            "user_level": 7
+          },
+          {
+            "body": "Additionally, proper breathing control helps manage fatigue during long ascents.",
+            "author": "BreathClimbMaster",
+            "date": "2023-11-23",
+            "user_level": 10
+          }
+        ]
+      },
+      {
+        "question": "Breathing tips in yoga for runners?",
+        "topic": "yoga",
+        "specific_point": "breathing for runners",
+        "description": "What breathing techniques in yoga are useful for runners?",
+        "author": "YogiRunner21",
+        "date": "2023-11-24",
+        "user_level": 14,
+        "answers": [
+          {
+            "body": "Deep breathing helps control pace and improves endurance for runners.",
+            "author": "ZenRunningBreath",
+            "date": "2023-11-25",
+            "user_level": 9
+          },
+          {
+            "body": "Additionally, practicing nasal yogic breathing can help manage endurance during the run.",
+            "author": "NoseBreatherYogi",
+            "date": "2023-11-26",
+            "user_level": 13
+          }
+        ]
+      }
+    ]
+  }
+  

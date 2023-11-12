@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Input from '@mui/joy/Input';
 import { useRouter } from "next/router";
 import { Autocomplete } from "@mui/joy";
 
@@ -20,7 +19,7 @@ function AppBar() {
           </ul>
         </li>
         <li>
-          <Image src="/user.png" alt="user" width={26} height={26} />
+          <Image src="/user.png" alt="user" onClick={() => router.push("/profile")} width={26} height={26} className="logo-account"/>
         </li>
       </ul>
     </div>

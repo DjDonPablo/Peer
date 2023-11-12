@@ -133,7 +133,7 @@ body {
     margin-top: 40px;
     margin-bottom: 20px;
     width: 80%;
-    height: 70%;
+    height: 30%;
     padding-top: 0;
     gap: 0;
 }
@@ -311,4 +311,11 @@ span:has(> .img-vote) {
 .name-color {
     color: #000;   
     font-weight: 700;
+}
+
+.ask-question {
+    margin-top: 20px;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
 }

@@ -1,4 +1,29 @@
+import { useRouter } from 'next/router';
 import React, { useEffect } from 'react';
+import Image from "next/image";
+import { Input } from '@mui/joy';
+
+function AppBar() {
+  const router = useRouter()
+  return (
+    <div className="header">
+      <ul className="list-header">
+        <li className="sub-list-element-header">
+          <Image className="logo-header" onClick={() => router.push("/")} src="/logo.png" alt="logo" width={32} height={32}/>
+          <ul className="sub-list-header sub-list-header-v2">
+            <li className="sub-list-header-li"><a className="menu__link" href="#">Subject</a></li>
+            <li className="sub-list-header-li"><a className="menu__link" href="#">Community</a></li>
+            <li className="sub-list-header-li"><a className="menu__link" href="#">About</a></li>
+          </ul>
+        </li>
+          <Input size="sm" placeholder="Search for a subject" variant="soft" color="primary" className="input-app-bar" />
+        <li>
+          <Image src="/user.png" alt="user" onClick={() => router.push("/profile")} width={26} height={26} className="logo-account"/>
+        </li>
+      </ul>
+    </div>
+  )
+}
 
 export default function Profile() {
   useEffect(() => {
@@ -13,6 +38,8 @@ export default function Profile() {
 
   return (
     <>
+      <AppBar/>
+      <div className="app-bar-divider" />
       <div className="all-container">
         <div className="profile-container">
           <div className="profile-square">

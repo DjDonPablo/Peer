@@ -6,6 +6,7 @@ import { Accordion, AccordionDetails, AccordionGroup, AccordionSummary, Avatar, 
 import Table from '@mui/joy/Table';
 import json from '../../../input/quete_solo.json';
 import forum from '../../../input/forum.json';
+import queteCommu from '../../../input/quete_commu.json'
 
 function AppBar() {
   const router = useRouter()
@@ -22,7 +23,7 @@ function AppBar() {
         </li>
           <Input size="sm" placeholder="Search for a subject" variant="soft" color="primary" className="input-app-bar" />
         <li>
-          <Image src="/user.png" alt="user" width={26} height={26} />
+          <Image src="/user.png" alt="user" onClick={() => router.push("/profile")} width={26} height={26} className="logo-account"/>
         </li>
       </ul>
     </div>
@@ -39,7 +40,7 @@ function AccountBadge({name, level} : AccountBadgeProps) {
     <div className="quoi">
       <div className="coubeh">
         <Avatar size="sm" className="avatar">
-          CC
+          DF
         </Avatar>
         <h5 className="name">{name}</h5>
         <h4 className="name name-color">{"Lvl." + level.toString()}</h4>
@@ -47,8 +48,6 @@ function AccountBadge({name, level} : AccountBadgeProps) {
     </div>
   )
 }
-
-
 
 type accordionResponseProps = {
   body : string;
@@ -139,7 +138,7 @@ function TableRow(props: basicTableProps) {
     <td>{props.exercise_name}</td>
     <td>{props.acceptance_rate}</td>
     <td className={props.difficulty == "hard" ? "basicTablePropsDifficultyHard" : props.difficulty == "medium" ? "basicTablePropsDifficultyMedium" : "basicTablePropsDifficultyEasy"}>{props.difficulty}</td>
-    <td><Button className={props.status == "new" ? "basicTablePropsButtonNew" : "basicTablePropsButtonOngoing"} disabled={props.status == "done"}>{props.status}</Button></td>
+    <td><Button className={props.status == "new" ? "basicTablePropsButtonNew" : "basicTablePropsButtonOngoing"} disabled={props.status == "done"}>{props.status === "new" ? "start" : props.status === "ongoing" ? "finish" : props.status}</Button></td>
   </tr>;
 }
 
@@ -201,14 +200,34 @@ function Forum() {
     <div>
       <Input size="md" placeholder="Search for a question" variant="soft" color="neutral" className="input-form" />
       <AccordionBasic />
+      <Button variant="soft" size="lg" className="ask-question">Ask a question</Button>
     </div>
   )
+}
+
+type CommuEventCardProps = {
+  event_name: string;
+  description: string;
+  date: string;
+  location: string;
+  participants_registered: number;
+  max_participants: number;
+  author: string;
+  type: string; 
+}
+
+function CommuEventCard({event_name, author, date, description, location, max_participants, participants_registered, type} : CommuEventCardProps) {
+  return <Card>
+
+  </Card>
 }
 
 function Communautary() {
   return (
     <div >
-      Communautary quests
+      {queteCommu.events.map((e) => 
+        <CommuEventCard author={e.author} date={e.date} description={e.description} event_name={e.event_name} location={e.location} max_participants={e.max_participants} participants_registered={e.participants_registered} type={e.type} key={"id_" + e.event_name}/>
+      )}
     </div>
   )
 }
@@ -238,7 +257,7 @@ function Search({ subject }: SearchProps) {
         >
           <Button className={selectedMenu === 0 ? "selected-button-menu" : ""} onClick={() => setSelectedMenu(0)}>Personal Quests</Button>
           <Button className={selectedMenu === 1 ? "selected-button-menu" : ""} onClick={() => setSelectedMenu(1)}>Forum</Button>
-          <Button style={{ width: '400px' }} className={selectedMenu === 2 ? "selected-button-menu" : ""} onClick={() => setSelectedMenu(2)}>Community Quests</Button>
+          <Button className={selectedMenu === 2 ? "selected-button-menu" : ""} onClick={() => setSelectedMenu(2)}>Community Quests</Button>
         </ButtonGroup>
       </div>
       <div className="divider-subject-menu-div">

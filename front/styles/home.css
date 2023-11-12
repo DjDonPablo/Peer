@@ -11,6 +11,10 @@ body {
     cursor: pointer;
 }
 
+.logo-account:hover {
+    cursor: pointer;
+}
+
 .header {
     background-color: #F0F4F8;
     padding-left: 80px;

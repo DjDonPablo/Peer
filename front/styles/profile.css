@@ -200,6 +200,7 @@ div[role="progressbar"]::before {
 
 .all-container{
   display: flex;
+  margin-top: 50px;
 }
 
 .center-graph{

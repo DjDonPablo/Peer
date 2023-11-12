@@ -7,7 +7,8 @@
             "location": "Kremlin Bicêtre Tennis Club",
             "participants_registered": 8,
             "max_participants": 12,
-            "author": "AceSmasher87"
+            "author": "AceSmasher87",
+            "type": "user"
         },
         {
             "event_name": "Football KBClub Match",
@@ -16,7 +17,8 @@
             "location": "Kremlin Bicêtre Stadium",
             "participants_registered": 20,
             "max_participants": 20,
-            "author": "SoccerFanatic23"
+            "author": "Adidas",
+            "type": "company"
         },
       {
             "event_name": "Mountain Biking Excursion",
@@ -25,7 +27,8 @@
             "location": "Verrières-le-Buisson Forest",
             "participants_registered": 0,
             "max_participants": 2,
-            "author": "TrailBlazer99"
+            "author": "Decathlon",
+            "type": "company"
         },
         {
             "event_name": "Open-Air Yoga Session",
@@ -34,7 +37,8 @@
             "location": "Parc des Présidents, Kremlin Bicêtre",
             "participants_registered": 3,
             "max_participants": 12,
-            "author": "YogiZen22"
+            "author": "",
+            "type": "random"
         },
         {
             "event_name": "Urban Running Race",
@@ -43,7 +47,8 @@
             "location": "Downtown Kremlin Bicêtre",
             "participants_registered": 1,
             "max_participants": 3,
-            "author": "CityStrider"
+            "author": "CityStrider",
+            "type": "user"
         }
     ]
 }

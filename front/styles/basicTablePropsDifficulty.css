@@ -23,3 +23,7 @@
     width: 120px;
     background-color: #00BB00;
 }
+
+.basicTablePropsButtonNew:hover {
+    background-color: #009900;
+}

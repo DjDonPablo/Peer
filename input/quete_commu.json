@@ -8,7 +8,8 @@
             "participants_registered": 8,
             "max_participants": 12,
             "author": "AceSmasher87",
-            "type": "user"
+            "type": "user",
+            "logo": "/tennis.png"
         },
         {
             "event_name": "Football KBClub Match",
@@ -18,7 +19,8 @@
             "participants_registered": 20,
             "max_participants": 20,
             "author": "Adidas",
-            "type": "company"
+            "type": "company",
+            "logo": "/foot.png"
         },
       {
             "event_name": "Mountain Biking Excursion",
@@ -28,7 +30,8 @@
             "participants_registered": 0,
             "max_participants": 2,
             "author": "Decathlon",
-            "type": "company"
+            "type": "company",
+            "logo": "/velo.png"
         },
         {
             "event_name": "Open-Air Yoga Session",
@@ -38,7 +41,8 @@
             "participants_registered": 3,
             "max_participants": 12,
             "author": "",
-            "type": "random"
+            "type": "random",
+            "logo": "/yoga.png"
         },
         {
             "event_name": "Urban Running Race",
@@ -48,7 +52,19 @@
             "participants_registered": 1,
             "max_participants": 3,
             "author": "CityStrider",
-            "type": "user"
+            "type": "user",
+            "logo": "/race.png"
+        },
+        {
+            "event_name": "Tree climbing in Wailing Wood",
+            "description": "A running event exploring the streets and parks of Kremlin Bicêtre. Ideal for urban runners seeking new routes.",
+            "date": "2023-11-28T09:00:00",
+            "location": "Wailing Wood",
+            "participants_registered": 50,
+            "max_participants": 100,
+            "author": "Babaji",
+            "type": "user",
+            "logo": "/racelegs.png"
         }
     ]
 }

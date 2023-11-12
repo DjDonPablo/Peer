@@ -214,19 +214,27 @@ type CommuEventCardProps = {
   max_participants: number;
   author: string;
   type: string; 
+  logo: string
 }
 
-function CommuEventCard({event_name, author, date, description, location, max_participants, participants_registered, type} : CommuEventCardProps) {
-  return <Card>
-
+function CommuEventCard({event_name, author, date, description, location, max_participants, participants_registered, type, logo} : CommuEventCardProps) {
+  return <Card className={type === "company" ? "concurrence-brasil" : "concurrence"}>
+    <div className="image-quest-div">
+      <h2 className="card-title">{event_name}</h2>
+      <p>{description}</p>
+      <h4>{"Where: " + location}</h4>
+      <h5>{"Date: " + date.slice(0, 10)}</h5>
+      <h5>{"Participant: " + participants_registered.toString() + "/" + max_participants.toString()}</h5>
+      {type !== "random" ? <h4>{"Made by: " + author}</h4> : null}
+    </div>
   </Card>
 }
 
 function Communautary() {
   return (
-    <div >
+    <div className="neymar">
       {queteCommu.events.map((e) => 
-        <CommuEventCard author={e.author} date={e.date} description={e.description} event_name={e.event_name} location={e.location} max_participants={e.max_participants} participants_registered={e.participants_registered} type={e.type} key={"id_" + e.event_name}/>
+        <CommuEventCard author={e.author} date={e.date} description={e.description} event_name={e.event_name} location={e.location} max_participants={e.max_participants} participants_registered={e.participants_registered} type={e.type} key={"id_" + e.event_name} logo={e.logo}/>
       )}
     </div>
   )

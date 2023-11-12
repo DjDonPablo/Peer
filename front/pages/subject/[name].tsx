@@ -21,7 +21,7 @@ function AppBar() {
             <li className="sub-list-header-li"><a className="menu__link" href="#">About</a></li>
           </ul>
         </li>
-          <Input size="sm" placeholder="Search for a subject" variant="soft" color="primary" className="input-app-bar" />
+        <Input size="sm" placeholder="Search for a subject" variant="soft" color="primary" className="input-app-bar" />
         <li>
           <Image src="/user.png" alt="user" onClick={() => router.push("/profile")} width={26} height={26} className="logo-account"/>
         </li>
@@ -226,6 +226,7 @@ function CommuEventCard({event_name, author, date, description, location, max_pa
       <h5>{"Date: " + date.slice(0, 10)}</h5>
       <h5>{"Participant: " + participants_registered.toString() + "/" + max_participants.toString()}</h5>
       {type !== "random" ? <h4>{"Made by: " + author}</h4> : null}
+      <Button variant="soft" disabled={participants_registered === max_participants}>Participate</Button>
     </div>
   </Card>
 }
@@ -256,6 +257,7 @@ function Search({ subject }: SearchProps) {
       <div className="header-subject">
         <Image alt="icon subject" src="/sports.png" width={50} height={50} className="image-subject" />
         <h1 className="subject">{subject.charAt(0).toUpperCase() + subject.slice(1)}</h1>
+        <h4 className="button-followed">Followed</h4>
       </div>
       <div className="button-group-div">
         <ButtonGroup

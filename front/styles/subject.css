@@ -351,3 +351,12 @@ span:has(> .img-vote) {
 .card-title {
     text-align: center;
 }
+
+.button-followed {
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 20px;
+    font-family: var(--joy-fontFamily-body, "Inter", var(--joy-fontFamily-fallback, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"));
+    font-weight: 500;
+    color: grey;
+}

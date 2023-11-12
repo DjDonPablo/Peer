@@ -15,3 +15,4 @@ $ cd front
 $ npm install
 $ npm run dev
 ```
+Made by DDD Team

@@ -2,7 +2,7 @@ import Button from "@mui/joy/Button"
 import { Dispatch, SetStateAction, useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import { Accordion, AccordionDetails, AccordionGroup, AccordionSummary, Avatar, ButtonGroup, Card, IconButton, Input } from "@mui/joy";
+import { Accordion, AccordionDetails, AccordionGroup, AccordionSummary, Autocomplete, Avatar, ButtonGroup, Card, IconButton, Input } from "@mui/joy";
 import Table from '@mui/joy/Table';
 import json from '../../../input/quete_solo.json';
 import forum from '../../../input/forum.json';
@@ -21,7 +21,7 @@ function AppBar() {
             <li className="sub-list-header-li"><a className="menu__link" href="#">About</a></li>
           </ul>
         </li>
-          <Input size="sm" placeholder="Search for a subject" variant="soft" color="primary" className="input-app-bar" />
+          <Autocomplete onChange={(e, v) => router.push("/subject/" + v)} size="sm" placeholder="Search for a subject" variant="soft" color="primary" className="input-app-bar" freeSolo={true} options={["Technology", "Science", "Health & Fitness", "Arts & Entertainment", "Gaming", "Books & Literature", "Travel", "Politics & Current Events", "Relationships & Advice", "Cooking & Food", "Sports", "Fashion", "DIY & Crafts", "Parenting", "Pets", "Cars & Vehicles", "Photography", "Career & Education", "Personal Finance", "Meditation & Mindfulness"]} />
         <li>
           <Image src="/user.png" alt="user" onClick={() => router.push("/profile")} width={26} height={26} className="logo-account"/>
         </li>

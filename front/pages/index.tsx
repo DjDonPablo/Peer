@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { useRouter } from "next/router";
-import { Autocomplete } from "@mui/joy";
+import { Autocomplete, Button } from "@mui/joy";
 
 function AppBar() {
   const router = useRouter()
@@ -19,7 +19,7 @@ function AppBar() {
           </ul>
         </li>
         <li>
-          <Image src="/user.png" alt="user" onClick={() => router.push("/profile")} width={26} height={26} className="logo-account"/>
+          <Button variant="soft" onClick={() => router.push("/connected")}>Sign in</Button>
         </li>
       </ul>
     </div>

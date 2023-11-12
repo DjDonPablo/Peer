@@ -1,10 +1,11 @@
 import Button from "@mui/joy/Button"
-import { useState } from "react";
+import { Dispatch, SetStateAction, useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { Accordion, AccordionDetails, AccordionGroup, AccordionSummary, Avatar, ButtonGroup, Card, IconButton, Input } from "@mui/joy";
 import Table from '@mui/joy/Table';
 import json from '../../../input/quete_solo.json';
+import forum from '../../../input/forum.json';
 
 function AppBar() {
   const router = useRouter()
@@ -28,78 +29,112 @@ function AppBar() {
   )
 }
 
-function AccountBadge() {
+type AccountBadgeProps = {
+  name: string
+  level: number
+}
+
+function AccountBadge({name, level} : AccountBadgeProps) {
   return (
     <div className="quoi">
       <div className="coubeh">
         <Avatar size="sm" className="avatar">
           CC
         </Avatar>
-        <h5 className="name">DjDonPablo</h5>
-        <h4 className="name name-color">Lvl.14</h4>
+        <h5 className="name">{name}</h5>
+        <h4 className="name name-color">{"Lvl." + level.toString()}</h4>
       </div>
     </div>
   )
 }
 
-function AccordionBasic() {
-  const [count, setCount] = useState<number>(6)
+
+
+type accordionResponseProps = {
+  body : string;
+  author : string;
+  date : string;
+  user_level : number;
+  vote : number;
+}
+
+type accordionProps = {
+  question : string;
+  topic : string;
+  specific_point : string;
+  description : string;
+  author : string;
+  date : string;
+  user_level : number;
+  answers : accordionResponseProps[];
+}
+
+function Response({body, author, date, user_level, vote} : accordionResponseProps) {
+  const [count, setCount] = useState(vote)
 
   return (
-    <AccordionGroup >
+    <div className="response">
+      <div className="buttons-votes" >
+        <ButtonGroup
+          orientation="vertical"
+          variant="soft"
+        >
+          <Button startDecorator={<Image alt="up-vote" src="/up.png" width={20} height={20} className="img-vote"/>} color="success" onClick={() => setCount(count + 1)}/>
+          <Button disabled={true} className="vote-count">
+            {count}
+          </Button>
+          <Button startDecorator={<Image alt="up-vote" src="/down.png" width={20} height={20} className="img-vote"/>} color="danger" onClick={() => setCount(count - 1)}/>
+        </ButtonGroup>
+      </div>
+      <div>
+        <div className="created-by">
+          <h4 className="details-created-by">By </h4>
+          <AccountBadge name={author} level={user_level}/>
+        </div>
+        <p className="details-forum">
+          {body}
+        </p>
+      </div>
+    </div>
+  )
+}
+
+function AccordionRow(props : accordionProps) {
+    return (
       <Accordion>
-        <AccordionSummary className="form-question">How can I do that ?</AccordionSummary>
+        <AccordionSummary className="form-question">{props.question}</AccordionSummary>
         <AccordionDetails>
           <div className="accordion-details">
-            <h5 className="details-date">11/11/2023</h5>
+            <h5 className="details-date">{props.date}</h5>
             <h4 className="details-title">Description: </h4>
-            <p className="details-forum">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-              tempor incididunt ut labore et dolore magna aliqua.
-            </p>
+            <p className="details-forum">{props.description}</p>
             <div className="created-by">
               <h4 className="details-created-by">By </h4>
-              <AccountBadge/>
+              <AccountBadge name={props.author} level={props.user_level}/>
             </div>
-            <div className="response">
-              <div className="buttons-votes" >
-                <ButtonGroup
-                  orientation="vertical"
-                  variant="soft"
-                >
-                  <Button startDecorator={<Image alt="up-vote" src="/up.png" width={20} height={20} className="img-vote"/>} color="success" onClick={() => setCount(count + 1)}/>
-                  <Button disabled={true} className="vote-count">
-                    {count}
-                  </Button>
-                  <Button startDecorator={<Image alt="up-vote" src="/down.png" width={20} height={20} className="img-vote"/>} color="danger" onClick={() => setCount(count - 1)}/>
-                </ButtonGroup>
-              </div>
-              <div>
-                <div className="created-by">
-                  <h4 className="details-created-by">By </h4>
-                  <AccountBadge/>
-                </div>
-                <p className="details-forum">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                  tempor incididunt ut labore et dolore magna aliqua.
-                </p>
-              </div>
-            </div>
+            {props.answers.map((e) => <Response author={e.author} body={e.body} date="" user_level={e.user_level} vote={e.vote}/>)}
           </div>
         </AccordionDetails>
       </Accordion>
+    )
+}
+
+function AccordionBasic() {
+  return (
+    <AccordionGroup >
+      {forum.questions.map((e) => AccordionRow(e))}
     </AccordionGroup>
   );
 }
 
 type basicTableProps = {
-  exercise_name : string;
-  status : string;
-  acceptance_rate : string;
-  difficulty : string;
+  exercise_name: string;
+  status: string;
+  acceptance_rate: string;
+  difficulty: string;
 }
 
-function TableRow(props : basicTableProps) {
+function TableRow(props: basicTableProps) {
   return <tr>
     <td>{props.exercise_name}</td>
     <td>{props.acceptance_rate}</td>
@@ -110,7 +145,7 @@ function TableRow(props : basicTableProps) {
 
 function BasicTable() {
   return (
-    <div className="table-personal-quest"> 
+    <div className="table-personal-quest">
       <Table aria-label="basic table">
         <thead>
           <tr>
@@ -121,7 +156,7 @@ function BasicTable() {
           </tr>
         </thead>
         <tbody>
-           { json.quests.map((e) => TableRow(e))}
+          {json.quests.map((e) => TableRow(e))}
         </tbody>
       </Table>
     </div>
@@ -131,7 +166,7 @@ function BasicTable() {
 function Personal() {
   return (
     <div className="container-personal-quests">
-      <BasicTable/>
+      <BasicTable />
       <div className="test">
         <Card className="card-style-2">
           <h3 className="level-perso">Level 7</h3>
@@ -144,7 +179,7 @@ function Personal() {
           <p>Your quests data</p>
           <div>
             <div className="center-sphere center-sphere-personal">
-              <div role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100" style={{ '--value': 65, '--fg-color': '#666', 'fontFamily': 'font-family: var(--joy-fontFamily-body, "Inter", var(--joy-fontFamily-fallback, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"))'}}></div>
+              <div role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100" style={{ '--value': 65, '--fg-color': '#666', 'fontFamily': 'font-family: var(--joy-fontFamily-body, "Inter", var(--joy-fontFamily-fallback, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"))' }}></div>
             </div>
             <div className="center-text-personal">
               <div className="above-line">Easy</div>
@@ -164,8 +199,8 @@ function Personal() {
 function Forum() {
   return (
     <div>
-      <Input size="md" placeholder="Search for a question" variant="soft" color="neutral" className="input-form"/>
-      <AccordionBasic/>
+      <Input size="md" placeholder="Search for a question" variant="soft" color="neutral" className="input-form" />
+      <AccordionBasic />
     </div>
   )
 }
@@ -182,7 +217,7 @@ type SearchProps = {
   subject: string;
 }
 
-function Search({subject} : SearchProps) {
+function Search({ subject }: SearchProps) {
   const [selectedMenu, setSelectedMenu] = useState<number>(0)
 
   if (subject == undefined) {
@@ -192,8 +227,8 @@ function Search({subject} : SearchProps) {
   return (
     <>
       <div className="header-subject">
-        <Image alt="icon subject" src="/sports.png" width={50} height={50} className="image-subject"/>
-        <h1 className="subject">{subject.charAt(0).toUpperCase() + subject.slice(1)}</h1>  
+        <Image alt="icon subject" src="/sports.png" width={50} height={50} className="image-subject" />
+        <h1 className="subject">{subject.charAt(0).toUpperCase() + subject.slice(1)}</h1>
       </div>
       <div className="button-group-div">
         <ButtonGroup
@@ -207,9 +242,9 @@ function Search({subject} : SearchProps) {
         </ButtonGroup>
       </div>
       <div className="divider-subject-menu-div">
-        <div className="divider-subject-menu"/>
+        <div className="divider-subject-menu" />
       </div>
-      {selectedMenu === 0 ? <Personal/> : selectedMenu === 1 ? <Forum/> : <Communautary/>}
+      {selectedMenu === 0 ? <Personal /> : selectedMenu === 1 ? <Forum /> : <Communautary />}
     </>
   )
 }
@@ -220,8 +255,8 @@ export default function SearchPage() {
   return (
     <div>
       <AppBar />
-      <div className="app-bar-divider"/>
-      <Search subject={(router.query.name) as string}/>
+      <div className="app-bar-divider" />
+      <Search subject={(router.query.name) as string} />
     </div>
   );
 }
